@@ -1,4 +1,4 @@
 ShowCase
 ========
 
-A project to enable those who deserve to be enabeled. :)
+Life is a canvas. Paint it the way you want it to be. 

@@ -12,6 +12,6 @@ urlpatterns = patterns('',
                        url(r'^/tags/(?P<pk>[0-9]+)/remove_tags$', 'compositions.views.remove_tags'),
                        url(r'^/tags/(?P<pk>[0-9]+)/remove_all_tags$', 'compositions.views.remove_all_tags'),
                        url(r'^/tags/(?P<pk>[0-9]+)/similar_compostions$', 'compositions.views.similar_compositions'),
-                       url(r'^/tags/tag_based_filter$', 'compositions.views.tag_based_filter'),                       )
+                       url(r'^/tags/tag_based_filter$', 'compositions.views.tag_based_filter'),)
                        
 urlpatterns = format_suffix_patterns(urlpatterns)

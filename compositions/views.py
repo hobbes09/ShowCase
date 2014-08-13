@@ -126,7 +126,7 @@ def follow_compositions(request, format=None):
 
 
 @api_view(['POST'])
-@permission_classes((IsOwnerOrReadOnly,))
+@permission_classes((IsHimself,))
 def add_tags(request, pk, format = None):
     #Try-Except block to check if the composition exists and to check if the request user has permission. 
     try:
@@ -134,7 +134,7 @@ def add_tags(request, pk, format = None):
 	check_object_permissions(request, add_tags.cls.permission_classes, request.user)  #Checks for object permission for given request.user from given set of permissions.
     except Composition.DoesNotExist:
 	raise Http404    
-    tag_list = request.POST.getlist()
+    tag_list = request.DATA('tagList')
     #Assuming all tag_list items are valid tags as authorized by admins [for Beta version only]
     for tag in tag_list:
 	if(tag_exists(tag)):
